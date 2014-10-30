@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charting", "Charting\Charting.csproj", "{3C3001CB-3BAF-45EB-9884-91BA05BDF249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charting.bll", "Charting.bll\Charting.bll.csproj", "{7C07F53E-2F27-4FA7-A3B7-8EE667A991C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChartingObjects", "Charting.bll\ChartingObjects.csproj", "{7C07F53E-2F27-4FA7-A3B7-8EE667A991C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

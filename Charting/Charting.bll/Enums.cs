@@ -1,4 +1,4 @@
-﻿namespace Charting.bll
+﻿namespace ChartingObjects
 {
 
     public enum DataPointValueType

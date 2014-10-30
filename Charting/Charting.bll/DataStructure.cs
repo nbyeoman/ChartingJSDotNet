@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Charting.bll
+namespace ChartingObjects
 {
     public class DataStructure
     {
