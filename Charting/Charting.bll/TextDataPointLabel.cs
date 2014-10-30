@@ -13,9 +13,9 @@ namespace ChartingObjects
         /// Strongly typed "String" data for the chart label. 
         /// </summary>
         private string _textLabel { get; set; }
-
-        public TextDataPointLabel(DataPointLabelType LabelDataType, object DataLabelValue): base(LabelDataType, DataLabelValue)
-        {            
+        
+        public TextDataPointLabel(DataPointLabelType LabelDataType, object DataLabelValue, LabelReturnStyle returnStyle): base(LabelDataType, DataLabelValue, returnStyle)
+        {
         }
         
         /// <summary>
@@ -37,7 +37,7 @@ namespace ChartingObjects
         } // ConvertLabelValueToDataType
 
 
-        public string GetLabel(DateReturnStyle returnStyle)
+        public override string GetLabel()
         {
             
             return this._textLabel;

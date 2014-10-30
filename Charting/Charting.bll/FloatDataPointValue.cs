@@ -14,7 +14,7 @@ namespace ChartingObjects
         /// </summary>
         private float? _dataValue { get; set; }
 
-        public FloatDataPointValue(DataPointValueType VabelDataType, object dataPointValue) : base(VabelDataType, dataPointValue)
+        public FloatDataPointValue(object dataPointValue, byte decimalPrecision): base(dataPointValue, decimalPrecision)
         {            
         }
         
@@ -37,7 +37,7 @@ namespace ChartingObjects
         } // ConvertValueToDataType
 
 
-        public float? GetValue(byte decimalPrecision)
+        public override float? Value()
         {
             
             if(this._dataValue == null)
@@ -48,7 +48,7 @@ namespace ChartingObjects
             // _dataValue has a valid float... 
             try
             {
-                this._dataValue = (float)Math.Round((Decimal)this._dataValue, decimalPrecision);
+                this._dataValue = (float)Math.Round((Decimal)this._dataValue, base.decimalPrecision);
             }catch(Exception)
             {
                 // Do not round number, and return it as-is... 

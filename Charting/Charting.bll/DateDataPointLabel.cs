@@ -14,8 +14,8 @@ namespace ChartingObjects
         /// </summary>
         private DateTime? _dateLabel { get; set; }
 
-        public DateDataPointLabel(DataPointLabelType LabelDataType, object DataLabelValue) : base(LabelDataType, DataLabelValue)
-        {            
+        public DateDataPointLabel(DataPointLabelType LabelDataType, object DataLabelValue, LabelReturnStyle returnStyle): base(LabelDataType, DataLabelValue, returnStyle)
+        {
         }
         
         /// <summary>
@@ -37,7 +37,7 @@ namespace ChartingObjects
         } // ConvertLabelValueToDataType
 
 
-        public string GetLabel(DateReturnStyle returnStyle)
+        public override string GetLabel()
         {
             
             if(this._dateLabel == null)
@@ -48,22 +48,22 @@ namespace ChartingObjects
             // _dateLabel has a valid datetime... 
             DateTime dateLabel = (DateTime)this._dateLabel;
 
-            switch(returnStyle)
+            switch (base.labelReturnStyle)
             {
-                
-                case DateReturnStyle.DateAndTime:
+
+                case LabelReturnStyle.DateAndTime:
                     return dateLabel.ToString("M/d/y H:mm");
-                    
-                case DateReturnStyle.DateOnly:
+
+                case LabelReturnStyle.DateOnly:
                     return dateLabel.ToString("M/d/y");
 
-                case DateReturnStyle.Time12HourOnly:
+                case LabelReturnStyle.Time12HourOnly:
                     return dateLabel.ToString("H:mm");
 
-                case DateReturnStyle.Time24HourOnly:
+                case LabelReturnStyle.Time24HourOnly:
                     return dateLabel.ToString("h:mm tt");
 
-                default:
+                default: // Text...
                     return dateLabel.ToString("M/d/y");
 
             } // switch

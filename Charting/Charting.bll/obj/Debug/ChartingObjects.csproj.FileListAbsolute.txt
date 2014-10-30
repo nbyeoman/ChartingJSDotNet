@@ -1,0 +1,5 @@
+C:\Users\Nick\Documents\GitHub\ChartingJSDotNet\Charting\Charting.bll\bin\Debug\ChartingObjects.dll
+C:\Users\Nick\Documents\GitHub\ChartingJSDotNet\Charting\Charting.bll\bin\Debug\ChartingObjects.pdb
+C:\Users\Nick\Documents\GitHub\ChartingJSDotNet\Charting\Charting.bll\obj\Debug\ChartingObjects.dll
+C:\Users\Nick\Documents\GitHub\ChartingJSDotNet\Charting\Charting.bll\obj\Debug\ChartingObjects.pdb
+C:\Users\Nick\Documents\GitHub\ChartingJSDotNet\Charting\Charting.bll\obj\Debug\ChartingObjects.csprojResolveAssemblyReference.cache

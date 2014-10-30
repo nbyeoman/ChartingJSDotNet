@@ -10,9 +10,9 @@ namespace ChartingObjects
     {
 
         /// <summary>
-        /// Provides the data type (enum) of the value. 
+        /// Determines the number of decimal places for rounding purposes. 
         /// </summary>
-        protected DataPointValueType _valueDataType { get; set; }
+        public byte decimalPrecision { get; set; }
 
         /// <summary>
         /// Generic label that will be later cast to an appropriate data type based on the valueDataType property. 
@@ -24,10 +24,10 @@ namespace ChartingObjects
         /// </summary>
         /// <param name="ValueDataType">Sets the value data type for retrieval from subclasses.</param>
         /// <param name="dataPointValue">Generic value which will later be cast based on _valueDataType when a concrete class is instantiated.</param>
-        protected DataPointValue(DataPointValueType ValueDataType, object dataPointValue)
+        protected DataPointValue(object dataPointValue, byte DecimalPrecision)
         {
-            this._valueDataType = ValueDataType;
             this._dataPointValue = dataPointValue;
+            this.decimalPrecision = DecimalPrecision; 
             this.ConvertPointValueToDataType();
         }
 
@@ -35,6 +35,12 @@ namespace ChartingObjects
         /// Converts the generic value object to a strongly typed variable. 
         /// </summary>
         protected abstract void ConvertPointValueToDataType();
+
+        /// <summary>
+        /// Returns the actual data point value.
+        /// </summary>
+        /// <returns></returns>
+        public abstract float? Value();
 
     } // Class... 
 } // Namespace... 
