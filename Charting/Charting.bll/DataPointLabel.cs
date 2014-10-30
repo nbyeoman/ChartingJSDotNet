@@ -9,12 +9,12 @@ namespace Charting.bll
     public abstract class DataPointLabel
     {
 
-        protected DataPointType _labelDataType { get; set; }
+        protected DataPointLabelType _labelDataType { get; set; }
 
         /// <summary>
         /// Provides the data type (enum) of the label. 
         /// </summary>
-        public DataPointType labelDataType { get { return this._labelDataType; } }
+        public DataPointLabelType labelDataType { get { return this._labelDataType; } }
         
         /// <summary>
         /// Generic label that will be later cast to an appropriate data type based on the labelDataType property. 
@@ -26,7 +26,7 @@ namespace Charting.bll
         /// </summary>
         /// <param name="LabelDataType">Sets the label data type for retrieval from subclasses.</param>
         /// <param name="DataLabelValue">Generic value which will later be cast based on labelDataType when a concrete class is instantiated.</param>
-        protected DataPointLabel(DataPointType LabelDataType, object DataLabelValue)
+        protected DataPointLabel(DataPointLabelType LabelDataType, object DataLabelValue)
         {
             this._labelDataType = LabelDataType;
             this._dataLabelValue = DataLabelValue;

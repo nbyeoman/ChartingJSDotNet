@@ -40,12 +40,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataPoint.cs" />
+    <Compile Include="DataPointValue.cs" />
     <Compile Include="DateDataPointLabel.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="DataSet.cs" />
     <Compile Include="DataStructure.cs" />
+    <Compile Include="FloatDataPointValue.cs" />
+    <Compile Include="IntegerDataPointValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataPointLabel.cs" />
+    <Compile Include="TextDataPointLabel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

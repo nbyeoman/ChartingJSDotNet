@@ -1,15 +1,17 @@
 ﻿namespace Charting.bll
 {
 
-    /// <summary>
-    /// Specifies which concrete implementation of the DataPointLabel and DataPointValue will be instantiated. 
-    /// </summary>
-    public enum DataPointType
+    public enum DataPointValueType
     {
         Float = 1, 
-        Integer = 2, 
-        Text = 3
-    } // DataPointType
+        Integer = 2         
+    }
+
+    public enum DataPointLabelType
+    {
+        Date = 1, 
+        Text = 2
+    }
 
     public enum DateReturnStyle
     {

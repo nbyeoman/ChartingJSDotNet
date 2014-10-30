@@ -9,27 +9,29 @@ namespace Charting.bll
     {
 
         public DataPointLabel dataPointLabel { get; set; }
-        //public IDataPointValue dataPointValue { get; set; } // Swap over to abstract class to mirror the DataPointLable class... 
-
+        public DataPointValue dataPointValue { get; set; } 
         
         /// <summary>
         /// Constructor - Determines label and value types.
         /// </summary>
         /// <param name="labelDataType">Determines if the label is a date, numeric, or string value.</param>
         /// /// <param name="valueDataType">Determines if the value is an integer or float value.</param>
-        public DataPoint(DataPointType labelDataType, DataPointType valueDataType)
+        public DataPoint(DataPointLabelType labelDataType, DataPointValueType valueDataType, object dataPointLabel, object dataPointValue)
         { 
             
            switch(labelDataType)
            {
 
-               case DataPointType.Float:
+               case DataPointLabelType.Date:
+                   this.dataPointLabel = new DateDataPointLabel(labelDataType, dataPointLabel);
                    break;
 
-               case DataPointType.Integer:
+               case DataPointLabelType.Text:
+                   this.dataPointLabel = new TextDataPointLabel(labelDataType, dataPointLabel);
                    break;
 
-               case DataPointType.Text:
+               default:  //Default to Text
+                   this.dataPointLabel = new TextDataPointLabel(labelDataType, dataPointLabel);
                    break;
 
            } // switch... 
@@ -37,17 +39,19 @@ namespace Charting.bll
            switch (valueDataType)
            {
 
-               case DataPointType.Float:
+               case DataPointValueType.Float:
+                   this.dataPointValue = new FloatDataPointValue(valueDataType, dataPointValue);
                    break;
 
-               case DataPointType.Integer:
+               case DataPointValueType.Integer:
+                   this.dataPointValue = new IntegerDataPointValue(valueDataType, dataPointValue);
                    break;
 
-               case DataPointType.Text:
+               default: // Default to Float for safety... 
+                   this.dataPointValue = new FloatDataPointValue(valueDataType, dataPointValue);
                    break;
 
            } // switch... 
-
 
         } // constructor... 
 

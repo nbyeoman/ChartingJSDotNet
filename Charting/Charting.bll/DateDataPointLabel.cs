@@ -14,7 +14,7 @@ namespace Charting.bll
         /// </summary>
         private DateTime? _dateLabel { get; set; }
 
-        public DateDataPointLabel(DataPointType LabelDataType, object DataLabelValue): base(LabelDataType, DataLabelValue)
+        public DateDataPointLabel(DataPointLabelType LabelDataType, object DataLabelValue) : base(LabelDataType, DataLabelValue)
         {            
         }
         
